@@ -1,0 +1,60 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+
+	#ubicacion{
+
+				position: absolute;
+			}
+	</style>
+
+		<script type="text/javascript" src="jquery.js"></script>
+
+		<script >
+			$(document).on('mousemove', function(e)
+			{
+
+					$('#x').html("<b>x:</b>"+ " "+ e.pageX);
+					$('#y').html("<b>y:</b>"+ " "+ e.pageY);
+
+					$('#ubicacion').css(
+					{
+						left:e.pageX, top:e.pageY
+					});
+
+					var y= $('#y');
+					var x= $('#x'); 
+					if (e.pageX<=200&&e.pageY<=80)
+						$('#fondo').css("background-color","red");
+					else if(e.pageX>200&&e.pageX<=400&&e.pageY>80&&e.pageY<=200)
+						$('#fondo').css("background-color","blue");
+
+					else if(e.pageX>400&&e.pageX<=800&&e.pageY>200&&e.pageY<=400)
+						$('#fondo').css("background-color","green");
+					else if (e.pageX>800&&e.pageY>500)
+						$('#fondo').css("background-color","yellow");
+
+
+
+
+			});
+
+
+		</script>
+</head>
+<body id="fondo">
+
+	<div id="ubicacion">
+
+		<p id="x"></p>
+		<p id="y"></p>
+
+	
+
+		
+	</div>
+</body>
+</html>
